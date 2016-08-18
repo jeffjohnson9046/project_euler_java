@@ -18,8 +18,8 @@ public class problem_1 {
      * @param upperBound The exclusive upper-bound of the Integer range
      * @return The sum of all multiples of 3 and 5 below the upper-bound
      */
-    public static Integer getMultiplesOf3and5UsingFilter(Integer upperBound) {
-        return IntStream.range(3, upperBound)
+    public static int getMultiplesOf3and5UsingFilter(Integer upperBound) {
+        return IntStream.range(1, upperBound)
                 .filter(i -> i % 3 == 0 || i % 5 == 0)
                 .sum();
     }
@@ -33,8 +33,8 @@ public class problem_1 {
      * @param upperBound The exclusive upper-bound of the Integer range
      * @return The sum of all multiples of 3 and 5 below the upper-bound
      */
-    public static Integer getMultiplesOf3And5UsingReduce(Integer upperBound) {
-        return IntStream.range(4, upperBound)
-                .reduce(3, (acc, i) -> i % 3 == 0 || i % 5 == 0 ? acc += i : acc);
+    public static int getMultiplesOf3And5UsingReduce(Integer upperBound) {
+        return IntStream.range(1, upperBound)
+                .reduce(0, (acc, i) -> i % 3 == 0 || i % 5 == 0 ? acc += i : acc);
     }
 }
